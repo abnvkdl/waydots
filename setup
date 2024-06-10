@@ -1,0 +1,9 @@
+#!/bin/bash
+ln -sf ~/waydots/.vimrc ~/.vimrc
+ln -sf ~/waydots/.vim ~/.vim
+ln -sf ~/waydots/.config/sway ~/.config/
+ln -sf ~/waydots/.config/dunst ~/.config/
+ln -sf ~/waydots/.config/foot ~/.config/
+ln -sf ~/waydots/.config/fish ~/.config/
+ln -sf ~/waydots/.config/tofi ~/.config/
+ln -sf ~/waydots/.local/bin ~/.local/

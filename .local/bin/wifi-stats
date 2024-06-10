@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+state=$(nmcli -fields STATE g)
+if [[ "$state" =~ "connected" ]]; then
+	status=$(nmcli | grep "^wlp"      | sed 's/\ connected\ to/Connected to/' | cut -d ':' -f2)
+else
+	status="Disconnected"
+fi
+notify-send "Wi-Fi Status" "$status"
+
