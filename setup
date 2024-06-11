@@ -6,4 +6,5 @@ ln -sf ~/waydots/.config/dunst ~/.config/
 ln -sf ~/waydots/.config/foot ~/.config/
 ln -sf ~/waydots/.config/fish ~/.config/
 ln -sf ~/waydots/.config/tofi ~/.config/
+ln -sf ~/waydots/.config/starship.toml ~/.config/
 ln -sf ~/waydots/.local/bin ~/.local/
