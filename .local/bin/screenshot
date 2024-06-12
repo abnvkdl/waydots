@@ -9,12 +9,13 @@ icon=~/.local/share/icons/dunst/camera.svg
 #make sure you have directory                        
 [ -d "$screenshotdir" ] || mkdir -pv "$screenshotdir"
 
-CHOSEN=$(printf "Screen\nWindow\nSelection" | tofi --config "$HOME"/.config/tofi/powermenu-config)
+CHOSEN=$(printf "Screen\nWindow\nSelection\nRecord screen" | tofi --config "$HOME"/.config/tofi/powermenu-config)
 case "$CHOSEN" in
-    "Screen") grim $file && notify-send -i $icon --urgency low 'Screenshot Taken' || notify-send -i $icon 'Failed to take screenshot' ;;
-    "Window") swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - $file  && notify-send -i $icon --urgency low 'Screenshot Taken' || notify-send -i $icon 'Failed to take screenshot';;
+    "Screen") grim $file && notify-send -i $icon 'Screenshot captured ' || notify-send -i $icon 'Failed to take screenshot ' ;;
+    "Window") swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - $file  && notify-send -i $icon 'Screenshot captured ' || notify-send -i $icon 'Failed to take screenshot ';;
     "Selection")
-        notify-send -i $icon --urgency low 'Select Area'
-        slurp | grim -g - $file && notify-send -i $icon --urgency low 'Screenshot Taken' || notify-send -i $icon 'Failed to take screenshot' ;;
+        notify-send -i $icon 'Select Area '
+        slurp | grim -g - $file && notify-send -i $icon 'Screenshot captured ' || notify-send -i $icon 'Failed to take screenshot ' ;;
+    "Record screen") recorder ;;
     *) exit 1 ;;
 esac

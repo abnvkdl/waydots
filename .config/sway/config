@@ -38,6 +38,7 @@ bindsym F3 exec wifi-stats
 # launching programs
 bindsym $mod+p exec power
 bindsym Print exec screenshot
+bindsym $mod+Print exec recorder
 bindsym Ctrl+space exec "dunstctl close-all"
 bindsym $mod+q exec firefox
 bindsym $mod+Return exec foot
