@@ -1,4 +1,8 @@
 # waydots
 
-https://github.com/abnvkdl/waydots/assets/98605298/680f3087-3865-40b5-91ca-4c79752bf3fd
+
+
+
+
+https://github.com/abnvkdl/waydots/assets/98605298/329b56e6-1503-4234-84d6-547708e9d85f
 
