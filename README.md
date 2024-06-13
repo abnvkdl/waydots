@@ -40,7 +40,7 @@ Make the scripts in ~/.local/bin executable.
 
 Check sway config file for all the keybindings   
 
-The font I use Maple Mono.   
+The font I use is Maple Mono.   
 
 I use Arch btw.   
 
