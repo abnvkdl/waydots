@@ -1,10 +1,13 @@
 #exec_always --no-startup-id autotiling
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font Regular 8
+font pango:Maple Mono NF 10
 output "*" bg ~/Pictures/wall.jpg fill
 input type:keyboard xkb_numlock enabled
-seat seat0 xcursor_theme oreo_white_cursors 12
+
+# use nwg-look instead, it supports all programs
+#seat seat0 xcursor_theme oreo_white_cursors 12
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 #exec --no-startup-id dex-autostart --autostart --environment i3
@@ -15,7 +18,9 @@ seat seat0 xcursor_theme oreo_white_cursors 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+#dunst needed to auto started each time
 exec dunst
+
 #my changes
 default_border pixel 2
 hide_edge_borders smart
@@ -36,7 +41,7 @@ bindsym F1 exec time-date
 bindsym F3 exec wifi-stats
  
 # launching programs
-bindsym $mod+p exec power
+bindsym $mod+p exec powermenu
 bindsym Print exec screenshot
 bindsym $mod+Print exec recorder
 bindsym Ctrl+space exec "dunstctl close-all"
@@ -49,7 +54,7 @@ bindsym $mod+s exec $menu
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+c kill
+bindsym $mod+x kill
 
 # assigning windows to workspaces
 assign [app_id="firefox"] workspace 2

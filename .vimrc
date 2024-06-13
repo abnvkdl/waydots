@@ -24,7 +24,14 @@ filetype indent on
 syntax on
 
 " Add numbers to each line on the left-hand side.
-set number
+set number relativenumber
+set numberwidth=1
+
+" This basically enables vim to manage keybords, clicking there places mouse there
+set mouse=a
+
+" Lets you store copied text in system clipboard to use in other programs
+set clipboard=unnamedplus
 
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline

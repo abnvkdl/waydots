@@ -8,3 +8,8 @@ ln -sf ~/waydots/.config/fish ~/.config/
 ln -sf ~/waydots/.config/tofi ~/.config/
 ln -sf ~/waydots/.config/starship.toml ~/.config/
 ln -sf ~/waydots/.local/bin ~/.local/
+ln -sf ~/waydots/.local/share/fonts ~/.local/share/
+ln -sf ~/waydots/.local/share/icons ~/.local/share/
+ln -sf ~/waydots/.local/share/pokemon-colorscripts ~/.local/share/
+ln -sf ~/waydots/.themes ~/
+ln -sf ~/waydots/.icons ~/
