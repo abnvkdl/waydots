@@ -1,3 +1,5 @@
+## My wayland configs
+
 ### Programs that I use
 Compositor `sway`
 Launcher `tofi`
