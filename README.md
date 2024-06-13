@@ -1,4 +1,5 @@
-![](https://github.com/abnvkdl/resources/sway.mp4)
+https://github.com/abnvkdl/waydots/assets/98605298/924aca5f-095c-4360-a9fb-22e055264ff4
+
 
 ## My wayland configs
 
