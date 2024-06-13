@@ -9,7 +9,7 @@ is_recorder_running() {
 
 toggle_recorder() {
     if is_recorder_running; then
-        kill $(pgrep -x wf-recorder) && notify-send "Recording saved "
+        killall -s SIGINT wf-recorder && notify-send "Recording saved "
     else
         notify-send "Recording in 5 seconds "
         sleep 5

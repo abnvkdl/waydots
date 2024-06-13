@@ -1,3 +1,5 @@
+![](https://github.com/abnvkdl/resources/sway.mp4)
+
 ## My wayland configs
 
 ### Programs that I use   

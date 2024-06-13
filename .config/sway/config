@@ -2,7 +2,7 @@
 set $mod Mod4
 
 font pango:Maple Mono NF 10
-output "*" bg ~/Pictures/wall.jpg fill
+output "*" bg ~/.config/sway/abstract.png fill
 input type:keyboard xkb_numlock enabled
 
 # use nwg-look instead, it supports all programs
