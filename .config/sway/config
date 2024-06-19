@@ -1,7 +1,7 @@
-#exec_always --no-startup-id autotiling
+#exec_always autotiling
 set $mod Mod4
 
-font pango:Maple Mono NF 10
+font pango:Cantarell 9
 output "*" bg ~/.config/sway/abstract.png fill
 input type:keyboard xkb_numlock enabled
 
@@ -27,6 +27,9 @@ hide_edge_borders smart
 gaps inner 6
 gaps outer 3
 smart_gaps on
+corner_radius 10
+blur enable
+blur_radius 5
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
@@ -34,6 +37,9 @@ bindsym XF86AudioRaiseVolume exec "volume up"
 bindsym XF86AudioLowerVolume exec "volume down"
 bindsym XF86AudioMute exec "volume mute"
 bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym Prior exec "playerctl previous"
+bindsym Next exec "playerctl next"
+
 
 # quick info
 bindsym F2 exec sys-stats
@@ -60,6 +66,9 @@ bindsym $mod+x kill
 assign [app_id="firefox"] workspace 2
 for_window [window_type="dialog"] floating enable
 for_window [window_role="dialog"] floating enable
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+for_window [app_id="nwg-look"] floating enable
+for_window [app_id="imv"] floating enable, resize set 680 384
 
 # change focus
 bindsym $mod+Left focus left
@@ -80,8 +89,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+space floating toggle
 
 # change split
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+h split toggle
+#bindsym $mod+v split v
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
