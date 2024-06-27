@@ -1,9 +1,52 @@
-#!/usr/bin/env bash
-state=$(nmcli -fields STATE g)
-if [[ "$state" =~ "connected" ]]; then
-	status=$(nmcli | grep "^wlp"      | sed 's/\ connected\ to/Connected to/' | cut -d ':' -f2)
+#!/bin/bash
+
+# Function to get the active WiFi interface
+get_active_wifi_interface() {
+    # Use iwconfig to get list of wireless interfaces
+    INTERFACES=$(iwconfig 2>/dev/null | grep -o '^[^ ]\+' | grep -v 'lo\|^[^a-zA-Z]')
+
+    # Check if any wireless interfaces are active
+    for iface in $INTERFACES; do
+        if iwconfig $iface 2>/dev/null | grep -q "ESSID:"; then
+            echo "$iface"
+            return
+        fi
+    done
+
+    echo "No active WiFi interface found."
+    exit 1
+}
+
+# Function to retrieve current WiFi connection details
+get_wifi_connection_details() {
+    INTERFACE="$1"
+
+    # Use iwconfig to get ESSID and Bit Rate
+    ESSID=$(iwconfig $INTERFACE 2>/dev/null | grep "ESSID:" | awk -F '"' '{print $2}')
+    SPEED=$(iwconfig $INTERFACE 2>/dev/null | awk '/Bit Rate/ {print $2}')
+
+    # Remove any non-numeric characters from SPEED to get just the numeric value
+    SPEED_NUMERIC=$(echo "$SPEED" | tr -d -c '[:digit:].')
+
+    # Convert from Mbps to MB/s (1 Mbps = 0.125 MB/s)
+    SPEED_MBPS=$(echo "scale=2; $SPEED_NUMERIC / 8" | bc)
+
+    echo "Connected to $ESSID, Speed: $SPEED_MBPS MB/s"
+}
+
+# Function to send notification using dunst
+send_notification() {
+    MESSAGE="$1"
+    notify-send "WiFi Connection Status" "$MESSAGE"
+}
+
+# Main script logic
+ACTIVE_INTERFACE=$(get_active_wifi_interface)
+
+if [ -n "$ACTIVE_INTERFACE" ]; then
+    CONNECTION_DETAILS=$(get_wifi_connection_details "$ACTIVE_INTERFACE")
+    send_notification "$CONNECTION_DETAILS"
 else
-	status="Disconnected"
+    send_notification "No active WiFi interface found."
 fi
-notify-send "$status "
 

@@ -25,11 +25,11 @@ exec dunst
 default_border pixel 2
 hide_edge_borders smart
 gaps inner 6
-gaps outer 3
+#gaps outer 3
 smart_gaps on
-corner_radius 10
-blur enable
-blur_radius 5
+#corner_radius 10
+#blur enable
+#blur_radius 5
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
@@ -52,6 +52,7 @@ bindsym Print exec screenshot
 bindsym $mod+Print exec recorder
 bindsym Ctrl+space exec "dunstctl close-all"
 bindsym $mod+q exec firefox
+bindsym $mod+a exec pcmanfm
 bindsym $mod+Return exec foot
 set $menu tofi-drun | xargs swaymsg exec --
 bindsym $mod+s exec $menu
@@ -89,7 +90,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+space floating toggle
 
 # change split
-bindsym $mod+h split toggle
+bindsym $mod+v split toggle
 #bindsym $mod+v split v
 
 # Define names for default workspaces for which we configure key bindings later on.
