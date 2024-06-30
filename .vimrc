@@ -82,11 +82,19 @@ set hlsearch
 " Set the commands to save in history default number is 20.
 set history=1000
 
-" Setting color theme
-set termguicolors
-colorscheme catppuccin_mocha
-
 " Statusline
 set laststatus=2
 set noshowmode
-" let g:lightline = {'colorscheme': 'catppuccin_mocha'}
+let g:lightline = {'colorscheme': 'catppuccin_mocha'}
+
+" vim-plug
+call plug#begin()
+
+Plug 'itchyny/lightline.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+call plug#end()
+
+" Setting color theme
+set termguicolors
+color catppuccin_mocha

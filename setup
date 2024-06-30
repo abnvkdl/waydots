@@ -1,6 +1,9 @@
 #!/bin/bash
+mkdir -p ~/.vim
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
 ln -sf ~/waydots/.vimrc ~/
-ln -sf ~/waydots/.vim ~/
+ln -sf ~/waydots/.vim/autoload ~/.vim/
 ln -sf ~/waydots/.bashrc ~/
 ln -sf ~/waydots/.config/sway ~/.config/
 ln -sf ~/waydots/.config/dunst ~/.config/
