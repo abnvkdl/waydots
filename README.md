@@ -14,6 +14,8 @@ Shell `fish`
 To take screenshots I use `grim`, to take screenshot of a specific area I use `slurp`   
 For recording screen I use `wf-recorder`   
 
+For getting realtime network speed as a notification install `wireless_tools`
+
 ### To install starship to the current user   
 
 `curl -O https://starship.rs/install.sh`   
