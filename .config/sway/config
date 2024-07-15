@@ -6,7 +6,7 @@ output "*" bg ~/.config/sway/abstract.png fill
 input type:keyboard xkb_numlock enabled
 
 # use nwg-look instead, it supports all programs
-#seat seat0 xcursor_theme oreo_white_cursors 12
+seat seat0 xcursor_theme phinger-cursors-dark 24
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
