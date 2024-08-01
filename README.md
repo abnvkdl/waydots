@@ -9,7 +9,7 @@ Notifications `dunst`
 Text editor `vim`   
 Video player `mpv`   
 Image-viewer `imv`   
-Shell `fish`   
+Shell `zsh`   
 
 To take screenshots I use `grim`, to take screenshot of a specific area I use `slurp`   
 For recording screen I use `wf-recorder`   
@@ -30,6 +30,10 @@ I also use papirus-folder script to change papirus folder colors.
 For my convenience I have stored papirus-icon-theme in .icons   
 and papirus-folders script in `.local/bin/`   
 You can use `nwg-look` program to change gtk specific themes and icons   
+
+vim may show behave wrongly in the first time  
+to fix this do `:PlugInstall` to fix that
+
 
 ***Things you may worth noting***   
 
