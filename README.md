@@ -32,7 +32,7 @@ and papirus-folders script in `.local/bin/`
 You can use `nwg-look` program to change gtk specific themes and icons   
 
 vim may show behave wrongly in the first time  
-to fix this do `:PlugInstall` to fix that
+to fix this do `:PlugInstall` in vim to fix that
 
 
 ***Things you may worth noting***   
