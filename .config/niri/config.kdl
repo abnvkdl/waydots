@@ -146,10 +146,10 @@ layout {
 
         // Color of the ring on the active monitor.
 //default        active-color "#7fc8ff"
-           active-color "#b48ead"
+           active-color "#ebdbb2"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        inactive-color "#928374"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -171,9 +171,8 @@ layout {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         off
-
         width 4
-        active-color "#ffc87f"
+        active-color "#d79921"
         inactive-color "#505050"
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
@@ -199,18 +198,18 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 
-//    spawn-at-startup "niri" "msg" "action" "focus-workspace" "2"
-    spawn-at-startup "swaybg" "-i" "~/Pictures/Wallpaper/Red Star OS/장자강의 불야경.jpg"
-    spawn-at-startup "waybar" "-c" "~/.config/niri/waybar"
+    spawn-at-startup "niri" "msg" "action" "focus-workspace" "2"
+    spawn-at-startup "swaybg" "-i" "/home/abnv/Pictures/Wallpapers/anime_skull.png"
+    spawn-at-startup "waybar"
     spawn-at-startup "foot" "--server"
-    spawn-at-startup "swayidle" "-C" "~/.config/swayidle.conf"
+    spawn-at-startup "swayidle" "-C" "/home/abnv/.config/swayidle.conf"
     spawn-at-startup "mako"
-    spawn-at-startup "wlsunset" "-l" "39.03921930" "-L" "125.76252410"
+//    spawn-at-startup "wlsunset" "-l" "39.03921930" "-L" "125.76252410"
     spawn-at-startup "xwayland-satellite" ":3"
-    spawn-at-startup "konsole"
-    spawn-at-startup "firedragon"
+    spawn-at-startup "blueman-applet"
+    spawn-at-startup "firefox"
     spawn-at-startup "element-desktop" "--enable-features=UseOzonePlatform,WebRTCPipeWireCapturer" "--ozone-platform=wayland"
-    spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+    spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -220,7 +219,7 @@ layout {
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "/home/abnv/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -263,7 +262,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
@@ -285,7 +284,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="konsole" at-startup=true
+    match app-id="foot" at-startup=true
     match app-id="easyeffects"
     open-on-workspace "base"
 }
@@ -296,7 +295,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="firedragon" at-startup=true
+    match app-id="firefox" at-startup=true
     open-on-workspace "main"
     open-maximized true
 }
@@ -317,18 +316,17 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return { spawn "konsole"; }
-    Alt+Space { spawn "fuzzel"; }
+    Mod+Return { spawn "alacritty"; }
+    Alt+Space { spawn "rofi" "-show" "drun"; }
     Ctrl+Alt+Escape { spawn "swaylock"; }
     Mod+x { spawn "pkill" "xwayland-satellite" "&&" "xwayland-satellite" ":3"; }
-    Mod+o { spawn "firedragon"; }
-    Mod+n { spawn "dolphin"; }
+    Mod+o { spawn "firefox"; }
+    Mod+n { spawn "pcmanfm"; }
     Mod+shift+g { spawn "jellyfinmediaplayer"; }
     Mod+g { spawn "gmusicbrowser"; }
     Mod+z { spawn "kate"; }
-    Mod+Escape { spawn "konsole"; }
-    Mod+F1 { spawn "firedragon"; }
-    Mod+F2 { spawn "dolphin"; }
+    Mod+F1 { spawn "firefox"; }
+    Mod+F2 { spawn "pcmanfm"; }
     Mod+F3 { spawn "betterbird"; }
     Mod+F4 { spawn "kate"; }
     Mod+F5 { spawn "libreoffice" "--writer"; }
