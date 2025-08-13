@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Rofi Powermenu Script
+# Save this as ~/.local/bin/rofi-powermenu and make it executable
+# chmod +x ~/.local/bin/rofi-powermenu
+
+# Icons/symbols for each option
+power=""
+restart=""
+lock=""
+sleep=""
+logout=""
+
+# Options
+options="$power\n$restart\n$lock\n$sleep\n$logout"
+
+# Get user choice
+chosen=$(echo -e "$options" | rofi -dmenu -theme ~/.config/rofi/powermenu.rasi -p "System" -selected-row 0)
+
+# Execute based on choice
+case $chosen in
+    $power)
+        systemctl poweroff
+        ;;
+    $restart)
+        systemctl reboot
+        ;;
+    $lock)
+        # Adjust this command based on your lock screen setup
+        # For i3lock: i3lock -c 000000
+        # For swaylock: swaylock -c 000000
+        # For betterlockscreen: betterlockscreen -l
+        loginctl lock-session
+        ;;
+    $sleep)
+        systemctl suspend
+        ;;
+    $logout)
+        # Adjust this based on your desktop environment
+        # For i3: i3-msg exit
+        # For sway: swaymsg exit
+        # For GNOME: gnome-session-quit --logout
+        # For KDE: qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+        loginctl terminate-user $USER
+        ;;
+    *)
+        # Do nothing if ESC or no selection
+        exit 1
+        ;;
+esac

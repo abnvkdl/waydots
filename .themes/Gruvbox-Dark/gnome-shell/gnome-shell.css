@@ -324,7 +324,6 @@
   background-color: #242220;
   border-radius: 21px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
-  border: 2px solid #fbf1c7;
 }
 
 .modal-dialog-button:last-child, .modal-dialog-linked-button:last-child {
@@ -1145,7 +1144,6 @@ StEntry StLabel.hint-text,
   border-radius: 20px;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.25);
   color: #fbf1c7;
-  border: 2px solid #fbf1c7;
 }
 
 #LookingGlassDialog > #Toolbar {
@@ -1565,9 +1563,6 @@ StEntry StLabel.hint-text,
   border: none;
   height: 35px;
   background-color: rgba(29, 32, 33, 0.85);
-  margin: 5px 10px 1px;
-  border: 2px solid #7daea3;
-  border-radius: 9999px;
 }
 
 #panel .panel-corner {
@@ -1588,8 +1583,7 @@ StEntry StLabel.hint-text,
   border-radius: 12px;
   text-shadow: none;
   box-shadow: none;
-  border: 4px solid transparent;
-  border-radius: 9999px;
+  border: 3px solid transparent;
 }
 
 #panel .panel-button.clock-display {
@@ -1599,16 +1593,12 @@ StEntry StLabel.hint-text,
 #panel .panel-button.clock-display .clock {
   transition-duration: 150ms;
   border-radius: 12px;
-  border: 4px solid transparent;
-  border-radius: 9999px;
 }
 
 #panel .panel-button:hover {
   color: #7daea3;
   background-color: transparent;
   box-shadow: inset 0 0 0 1000px rgba(58, 59, 55, 0.624);
-  border: 4px solid transparent;
-  border-radius: 9999px;
 }
 
 #panel .panel-button:hover.clock-display {
@@ -1619,8 +1609,6 @@ StEntry StLabel.hint-text,
 #panel .panel-button:hover.clock-display .clock {
   color: #7daea3;
   box-shadow: inset 0 0 0 1000px rgba(58, 59, 55, 0.624);
-  border: 4px solid transparent;
-  border-radius: 9999px;
 }
 
 #panel .panel-button:active, #panel .panel-button:active:hover, #panel .panel-button:overview, #panel .panel-button:overview:hover, #panel .panel-button:focus, #panel .panel-button:focus:hover, #panel .panel-button:checked, #panel .panel-button:checked:hover {
@@ -1777,7 +1765,6 @@ StEntry StLabel.hint-text,
   box-shadow: 0 6px 15px -6px rgba(0, 0, 0, 0.25);
   border: none;
   font-weight: normal;
-  border: 2px solid #7daea3;
 }
 
 .popup-menu .popup-menu-item {
@@ -2989,7 +2976,6 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 18px;
   border: none;
   box-shadow: inset 0 0.5px rgba(251, 241, 199, 0.1);
-  border: 2px solid #7daea3;
 }
 
 .modal-dialog-button:last-child, .modal-dialog-linked-button:last-child {
@@ -3226,7 +3212,6 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 18px;
   border: none;
   box-shadow: inset 0 0.5px rgba(251, 241, 199, 0.1);
-  border: 2px solid #7daea3;
 }
 
 .modal-dialog-linked-button:last-child, .modal-dialog-button:last-child {
@@ -4278,7 +4263,6 @@ StWidget.focused .app-grid-running-dot {
   text-shadow: none;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   border-radius: 18px;
-  border: 2px solid #7daea3;
 }
 
 .notification-banner:hover, .notification-banner:active {
@@ -4363,7 +4347,6 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 18px;
   border: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-  border: 2px solid #7daea3;
 }
 
 .notification-banner:hover, .notification-banner:active, .notification-banner:focus {
@@ -4415,7 +4398,6 @@ StWidget.focused .app-grid-running-dot {
   border-radius: 18px;
   border: none;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-  border: 2px solid #7daea3;
 }
 
 .notification-banner:hover, .notification-banner:active, .notification-banner:focus {
@@ -5671,7 +5653,6 @@ StWidget.focused .app-grid-running-dot {
 
 #dashtodockContainer #dash .dash-background {
   background-color: rgba(29, 32, 33, 0.85);
-  border: 2px solid #7daea3;
 }
 
 #dashtodockContainer .app-well-app-running-dot {

@@ -1390,6 +1390,7 @@ searchbar > revealer > box {
   color: #fbf1c7;
   border-radius: 12px 12px 0 0;
   border: none;
+  box-shadow: inset 0 1px rgba(251, 241, 199, 0.1);
 }
 
 .titlebar:disabled {
@@ -1970,7 +1971,6 @@ menu {
   background-clip: border-box;
   border-radius: 12px;
   /* border: 1px solid $primary; */
-  border: 2px solid #7daea3;
 }
 
 .csd menu {
@@ -2091,7 +2091,7 @@ popover.background {
 
 popover.background, .csd popover.background {
   box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 2px #7daea3, 0 0 36px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), inset 0 1px rgba(251, 241, 199, 0.1), 0 0 36px transparent;
 }
 
 popover.background:backdrop, .csd popover.background:backdrop {
@@ -4155,13 +4155,13 @@ colorchooser .popover.osd:backdrop {
 decoration {
   transition: none;
   border-radius: 12px;
-  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 0 2px #7daea3, 0 0 36px transparent;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2), 0 16px 15px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12), 0 0 36px transparent;
   margin: 10px;
 }
 
 decoration:backdrop {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #242220, 0 0 36px transparent;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 36px transparent;
 }
 
 .tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration {
@@ -4181,13 +4181,13 @@ decoration:backdrop {
 .ssd decoration {
   border: none;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 0 0 2px #7daea3;
+  box-shadow: none;
 }
 
 .ssd decoration:backdrop {
   border: none;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 0 0 2px #242220;
+  box-shadow: none;
 }
 
 .metacity decoration {
@@ -4199,7 +4199,7 @@ decoration:backdrop {
 .csd.popup decoration {
   border-radius: 12px;
   border: none;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #7daea3;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 tooltip.csd decoration {
@@ -4226,121 +4226,31 @@ messagedialog.background.csd decoration {
 }
 
 button.titlebutton:not(.suggested-action):not(.destructive-action) {
-  min-height: 16px;
-  min-width: 16px;
+  min-height: 22px;
+  min-width: 22px;
   padding: 0;
   margin: 0 0px;
   border-radius: 9999px;
 }
 
 button.minimize.titlebutton:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:not(.suggested-action):not(.destructive-action), button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  color: transparent;
+  color: rgba(251, 241, 199, 0.7);
+  background-color: alpha(currentColor, 0.1);
 }
 
 button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  box-shadow: none;
+  color: #fbf1c7;
+  background-color: alpha(currentColor, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px rgba(251, 241, 199, 0.1);
 }
 
 button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.12);
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.12) 10%, transparent 0%);
-}
-
-button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  color: transparent;
+  color: #fbf1c7;
+  background-color: alpha(currentColor, 0.2);
 }
 
 button.minimize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:not(.suggested-action):not(.destructive-action) {
-  background-color: #282524;
-}
-
-button.minimize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.minimize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.maximize.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:hover:not(.suggested-action):not(.destructive-action), button.close.titlebutton:backdrop:active:not(.suggested-action):not(.destructive-action) {
-  color: transparent;
-}
-
-button.minimize.titlebutton:not(.suggested-action):not(.destructive-action) {
-  background-color: #e78a4e;
-}
-
-button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#e78a4e, 0.4);
-}
-
-button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#e78a4e, 0.6);
-}
-
-button.maximize.titlebutton:not(.suggested-action):not(.destructive-action) {
-  background-color: #a9b665;
-}
-
-button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#a9b665, 0.4);
-}
-
-button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#a9b665, 0.6);
-}
-
-button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  background-color: #ea6962;
-}
-
-button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#ea6962, 0.4);
-}
-
-button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#ea6962, 0.6);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.minimize.titlebutton:not(.suggested-action):not(.destructive-action), .background.csd headerbar.titlebar.default-decoration button.maximize.titlebutton:not(.suggested-action):not(.destructive-action), .background.csd headerbar.titlebar.default-decoration button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: center;
-}
-
-.background.csd headerbar.titlebar.default-decoration button.minimize.titlebutton:not(.suggested-action):not(.destructive-action), .background.csd headerbar.titlebar.default-decoration button.maximize.titlebutton:not(.suggested-action):not(.destructive-action), .background.csd headerbar.titlebar.default-decoration button.close.titlebutton:not(.suggested-action):not(.destructive-action) {
-  box-shadow: none;
-  color: transparent;
-  animation: none;
-  transition: all 75ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.minimize.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#e78a4e, 0.4);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.minimize.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#e78a4e, 0.6);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.maximize.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#a9b665, 0.4);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.maximize.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#a9b665, 0.6);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.close.titlebutton:hover:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#ea6962, 0.4);
-}
-
-.background.csd headerbar.titlebar.default-decoration button.close.titlebutton:active:not(.suggested-action):not(.destructive-action) {
-  background-color: shade(#ea6962, 0.6);
-}
-
-.background.csd.maximized
-headerbar.titlebar.default-decoration
-button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:hover, .background.csd.maximized
-headerbar.titlebar.default-decoration
-button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:active, .background.csd.fullscreen
-headerbar.titlebar.default-decoration
-button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:hover, .background.csd.fullscreen
-headerbar.titlebar.default-decoration
-button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:active, .background.csd.tiled headerbar.titlebar.default-decoration button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:hover, .background.csd.tiled headerbar.titlebar.default-decoration button.titlebutton:not(.suggested-action):not(.destructive-action).maximize:active {
-  background-color: shade(#a9b665, 0.4);
+  opacity: 0.65;
 }
 
 .monospace {
@@ -4836,7 +4746,7 @@ window.org-gnome-gedit > overlay > box.vertical > paned.gedit-side-panel-paned s
   padding: 6px;
   background-color: #242220;
   border-radius: 0 0 12px 12px;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05), 0 0 0 2px #fbf1c7;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05), 0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 .gedit-search-slider .linked:not(.vertical) > entry .gedit-search-entry-occurrences-tag {
@@ -7338,9 +7248,8 @@ MsdOsdWindow.background.osd .progressbar {
 }
 
 .budgie-popover {
-  border-color: #242220;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #fbf1c7;
-  background-clip: border-box;
+  border: none;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   background-color: #242220;
   border-radius: 12px;
 }
@@ -7450,7 +7359,7 @@ MsdOsdWindow.background.osd .progressbar {
   padding: 6px;
   margin: 6px;
   border: none;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #fbf1c7;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .budgie-popover.budgie-menu list.left-overlay-menu > row.activatable {
@@ -8225,7 +8134,7 @@ window#whiskermenu-window > frame > border {
   margin: 6px;
   border: none;
   background-color: #242220;
-  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #7daea3;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.15), 0 4px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 6px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(251, 241, 199, 0.1);
 }
 
 window#whiskermenu-window box.categories > button.radio {
@@ -8273,7 +8182,8 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 #XfceNotifyWindow {
   background-color: #282524;
   border-radius: 12px;
-  border: 2px solid #7daea3;
+  border: none;
+  box-shadow: none;
 }
 
 #XfceNotifyWindow buttonbox {
@@ -8287,7 +8197,8 @@ window#whiskermenu-window .title-area > .commands-area > button.flat.command-but
 dialog.xfsm-logout-dialog {
   border-radius: 12px;
   background-color: rgba(36, 34, 32, 0.97);
-  border: 2px solid #7daea3;
+  border: none;
+  box-shadow: none;
 }
 
 #xfwm-tabwin {

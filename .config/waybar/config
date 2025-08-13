@@ -18,11 +18,11 @@
 
     "modules-right": [
         "tray",
+        "network",
 	"power-profiles-daemon",
         "cpu",
         "memory",
         "battery",
-        "network",
 //	"bluetooth",
 	"backlight",
         "pulseaudio"
@@ -34,20 +34,25 @@
         "tooltip": false
     },
 
+"wlr/taskbar": {
+    "tooltip-format": "{title} | {app_id}",
+},
+
     "tray": {
         "spacing": 10,
         "tooltip": false
     },
 
     "clock": {
-        "format": "{:%I:%M %p - %a, %d %b %Y}",
+        "format": "{:%a %I:%M %p}",
+        "format-alt": "{:%d %b %Y}",
         "tooltip": false
     },
 
     "cpu": {
         "format": "cpu {usage}%",
         "interval": 2,
-        "on-click": "footclient -T waybar_btop -e btop",
+        "on-click": "kitty -T waybar_btop btop",
         "states": {
             "critical": 90
         }
@@ -56,7 +61,7 @@
     "memory": {
         "format": "mem {percentage}%",
         "interval": 2,
-        "on-click": "footclient -T waybar_btop -e btop",
+        "on-click": "kitty -T waybar_btop btop",
         "states": {
             "critical": 80
         }
@@ -75,8 +80,7 @@
    "backlight": {
         "format": "bri{percent: >3}%",
         "tooltip": false,
-        "on-scroll-down": "brightnessctl -c backlight set 5%-",
-        "on-scroll-up": "brightnessctl -c backlight set +5%"
+        "min-brightness": 5,
     },
 
     "network": {
@@ -86,10 +90,10 @@
         "interval": 5,
         "tooltip-format-wifi": "{essid}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "alacritty -e nmtui",
+        "on-click": "kitty nmtui",
     },
 
-"bluetooth": {
+    "bluetooth": {
 	"format": " {status}",
 	"format-connected": " {device_alias}",
 	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
