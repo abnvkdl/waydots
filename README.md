@@ -1,15 +1,15 @@
 ## My wayland configs
 
 ### Programs that I use   
-Compositor `sway` `niri`
-Launcher `tofi` `rofi`
-Terminal `foot` `kitty`
-Browser `firefox`   
+Compositor `sway` `niri`  
+Launcher `tofi` `rofi`  
+Terminal `foot` `kitty`  
+Browser `firefox`  
 Notifications `dunst` `mako`  
-Text editor `vim` `neovim`
-Video player `mpv`
-Image-viewer `imv`   
-Shell `zsh`   
+Text editor `vim` `neovim`  
+Video player `mpv`  
+Image-viewer `imv`  
+Shell `zsh`  
 
 To take screenshots I use `grim`, to take screenshot of a specific area I use `slurp`   
 For recording screen I use `wf-recorder`   
