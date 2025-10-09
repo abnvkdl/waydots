@@ -70,7 +70,7 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			niri msg action quit -s
+			hyprctl dispatch exit 1
 		fi
 #	else
 #		exit 0

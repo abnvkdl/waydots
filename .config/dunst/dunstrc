@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 20x20
+    offset = 10x10
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -103,7 +103,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#b4befe"
+    frame_color = "#d4be98"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -136,7 +136,7 @@
 
     ### Text ###
 
-    font = Maple Mono NF 9
+    font = iosevka nerd font propo 9
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -262,7 +262,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 10
+    corner_radius = 0
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -328,15 +328,9 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-[urgency_normal]                                     
-    background = "#1e1e2e"
-    foreground = "#b4befe" 
-    timeout = 5
-    default_icon = bell
-
 [urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#b4befe"
+    background = "#1d2021"
+    foreground = "#fbf1c7"
     timeout = 5
     default_icon = bell
 

@@ -3,14 +3,13 @@
     "spacing": 0,
     "height": 0,
 
-    "margin-top": 0,
-    "margin-right": 0,
+    "margin-top": 5,
+    "margin-right": 5,
     "margin-bottom": 0,
-    "margin-left": 0,
+    "margin-left": 5,
 
     "modules-left": [
-        "hyprland/workspaces",
-	"idle_inhibitor"
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
@@ -19,8 +18,8 @@
 
     "modules-right": [
         "tray",
-        "power-profiles-daemon",
         "network",
+	"power-profiles-daemon",
         "cpu",
         "memory",
         "battery",
@@ -30,8 +29,7 @@
     ],
 
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "disable-scroll": false,
         "all-outputs": true,
         "tooltip": false
     },
@@ -52,7 +50,7 @@
     },
 
     "cpu": {
-        "format": " {usage}%",
+        "format": "cpu {usage}%",
         "interval": 2,
         "on-click": "kitty -T waybar_btop btop",
         "states": {
@@ -61,7 +59,7 @@
     },
 
     "memory": {
-        "format": " {percentage}%",
+        "format": "mem {percentage}%",
         "interval": 2,
         "on-click": "kitty -T waybar_btop btop",
         "states": {
@@ -69,31 +67,26 @@
         }
     },
 
-
     "battery": {
-	"interval": 9,
+        "format": "bat {capacity}%",
+        "interval": 5,
         "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 15
+            "warning": 20,
+            "critical": 10
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-        },
-
-    "backlight": {
-	"tooltip": false,
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
-        "min-brightness": 5
+        "tooltip": false
+    },
+ 
+   "backlight": {
+        "format": "bri{percent: >3}%",
+        "tooltip": false,
+        "min-brightness": 5,
     },
 
     "network": {
-        "format-wifi" : "󰖩 {bandwidthDownBits}",
-        "format-ethernet": "󰈀 {bandwidthDownBits}",
-        "format-disconnected" : "󰖪 Disconnected",
+        "format-wifi" : "wifi {bandwidthDownBits}",
+        "format-ethernet": "enth {bandwidthDownBits}",
+        "format-disconnected" : "no network",
         "interval": 5,
         "tooltip-format-wifi": "{essid}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
@@ -122,31 +115,17 @@
         "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
     },
     "power-profiles-daemon": {
-	"format": "{icon}",
-	"tooltip": false,
-	"format-icons": {
-	"default": "",
-	"performance": "󱐋",
-	"balanced": "",
-	"power-saver": ""
-	}
+	"format": "{profile}",
+	"tooltip": false
  	},
 
     "pulseaudio": {
-	"scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "󰂰 {volume}%",
-        "format-bluetooth-muted": "󰂲 {icon}",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "󰋋",
-            "hands-free": "󰥰",
-            "headset": "󰋎",
-            "phone": "󰏲",
-            "portable": "󰄝",
-            "car": "󰄋",
-            "default": ["󰕿", "󰖀", "󰕾"]
-            }
-	}
-
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "vol {volume}%",
+        "format-bluetooth": "vol {volume}%",
+        "nospacing": 1,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    }
 }
