@@ -23,7 +23,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
-#zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-syntax-highlighting
 #zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -70,9 +70,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias c='clear'
-alias in='sudo dnf install'
-alias up='sudo dnf upgrade'
-alias re='sudo dnf remove'
+alias in='sudo pacman -S'
+alias up='sudo pacman -Syu'
+alias re='sudo pacman -Rns'
 
 # Shell integrations
 eval "$(fzf --zsh)"
